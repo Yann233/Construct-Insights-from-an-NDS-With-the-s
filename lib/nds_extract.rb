@@ -1,7 +1,10 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'directors_database'
 
+# Use loops, variables and the accessing method, [], to loop through the NDS
+# and total up all.
 def directors_totals(nds)
+ #写了binding.pry再learn=>会导致running停在这里，这时候打nds就可以看到它的具体数据
   # Remember, it's always OK to pretty print what you get *in* to make sure
   # that you know what you're starting with!
   #
@@ -10,7 +13,6 @@ def directors_totals(nds)
   result = {}
     director_i=0
     while director_i < nds.length do
-      #binding.pry
       direct_name=nds[director_i][:name]
       result[direct_name]=0
       #binding.pry
@@ -22,14 +24,5 @@ def directors_totals(nds)
       end
         director_i += 1
     end
-    result
-    #
-    # Use loops, variables and the accessing method, [], to loop through the NDS
-    # and total up all the
-    # ...
-    # ...
-    # ...
-    #
-    #
-    # Be sure to return the result at the end!
-end
+    result   # Be sure to return the result at the end!
+  end
